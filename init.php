@@ -31,7 +31,8 @@ else {
         }
     }
 
-    echo "All links have been checked! see page_not_found file for the list of Error 404 links.<br />";
+    echo "All links have been checked! see page_not_found file for the list of Error 404 links.<br /><br />";
+    echo 'Fork this plugin on <a href="https://github.com/padz535/simple-php-link-checker">Github</a>. Created by Renemari Padillo';
 }
 
 fclose($fileLink);
