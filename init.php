@@ -27,7 +27,7 @@ if ( isset($_POST["data"]) ) {
 
             ini_set('max_execution_time', 0); // Remove the execution timeout to allow our script to run when checking many links
             
-            $uploadDest = __DIR__.'/'.$file["name"];
+            $uploadDest = __DIR__.'/links';
 
             move_uploaded_file($file["tmp_name"], $uploadDest);
             
