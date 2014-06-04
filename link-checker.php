@@ -47,9 +47,8 @@ class LinkChecker
     public static function GetFinalUrl($url)
     {
         $result = "";
-        $handle = curl_init();
-
-        curl_setopt($handle, CURLOPT_URL, $url);
+        $handle = curl_init($url);
+        
         curl_setopt($handle, CURLOPT_HEADER, true);
         curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true); // Must be set to true so that PHP follows any "Location:" header
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);

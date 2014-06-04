@@ -80,7 +80,6 @@ if ( isset($_POST["data"]) ) {
 <body>
     <header>
         <h1>Simple PHP Link Checker</h1>
-        <p>Created by <a href="http://about.me/renemari.padillo">Renemari Padillo</a>.</p>
     </header>
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="input-group">
@@ -100,6 +99,6 @@ if ( isset($_POST["data"]) ) {
         </div>
         <button type="submit">Go!</button>
     </form><br />
-    <footer>Fork this plugin on <a href="https://github.com/padz535/simple-php-link-checker">Github</a>. Created by Renemari Padillo.</footer>
+    <footer>Fork this plugin on <a href="https://github.com/padz535/simple-php-link-checker">Github</a>. Created by <a href="http://about.me/renemari.padillo">Renemari Padillo</a>.</footer>
 </body>
 </html>
