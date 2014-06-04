@@ -17,9 +17,6 @@ if ( isset($_POST["data"]) ) {
         unset($_POST["data"]);
         unset($_FILES["file"]);
 
-        // $file = fopen("links", "r");
-        // $output = fopen("output", "w");
-
         if ( $file["error"] !== UPLOAD_ERR_OK && ! is_uploaded_file($file["tmp_name"]) )
             echo "File link doesn't exist.";
         else {
@@ -28,16 +25,14 @@ if ( isset($_POST["data"]) ) {
             ini_set('max_execution_time', 0); // Remove the execution timeout to allow our script to run when checking many links
             
             $uploadDest = __DIR__.'/links';
+            // remove duplicate upload
+            if ( file_exists($uploadDest) )
+                unlink($uploadDest);
 
             move_uploaded_file($file["tmp_name"], $uploadDest);
             
             $fstream = fopen($uploadDest, "r");
             $output = fopen("output.txt", "w");;
-
-            // print_r($fstream);
-            // print_r($uploadDest);
-            // exit();
-
             //
             // Start Checking
             //
