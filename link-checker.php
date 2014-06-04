@@ -3,7 +3,7 @@
 Name: Link Checker
 Author: Renemari Padillo
 Author URI: http://about.me/renemari.padillo
-Version: 1.0.0
+Version: 1.1.0
 License: MIT
 */
 
@@ -33,6 +33,30 @@ class LinkChecker
 
         if ($httpCode == 404)
             $result = true;
+
+        return $result;
+    }
+
+    /**
+     * This will get the final url of the link (if there are any redirection(s) along)
+     *
+     * @param String $url [Link URL to be checked]
+     *
+     * @return String [The final URL]
+     */
+    public static function GetFinalUrl($url)
+    {
+        $result = "";
+        $handle = curl_init();
+
+        curl_setopt($handle, CURLOPT_URL, $url);
+        curl_setopt($handle, CURLOPT_HEADER, true);
+        curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true); // Must be set to true so that PHP follows any "Location:" header
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+
+        $link = curl_exec($handle);
+
+        $result = curl_getinfo($handle, CURLINFO_EFFECTIVE_URL);
 
         return $result;
     }
