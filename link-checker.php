@@ -46,7 +46,6 @@ class LinkChecker
      */
     public static function GetFinalUrl($url)
     {
-        $result = "";
         $handle = curl_init($url);
         
         curl_setopt($handle, CURLOPT_HEADER, true);

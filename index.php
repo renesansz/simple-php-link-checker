@@ -96,7 +96,8 @@ if ( isset($_POST["data"]) ) {
                 The file that contains the links you wanted to be checked:<br />
             </label>
             <input name="file" type="file" required /> (Plain text only)
-        </div>
+        </div><br />
+        <h5>Note: The process time depends on the number of links to be checked</h5>
         <button type="submit">Go!</button>
     </form><br />
     <footer>Fork this plugin on <a href="https://github.com/padz535/simple-php-link-checker">Github</a>. Created by <a href="http://about.me/renemari.padillo">Renemari Padillo</a>.</footer>
